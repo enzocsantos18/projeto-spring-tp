@@ -1,0 +1,29 @@
+<header th:fragment="cabecalho">
+  <nav>
+    <ul>
+      <a th:href="@{/}">
+        <li>Home</li>
+      </a>
+      <a th:href="@{/(categoria='sobremesas')}">
+        <li>Sobremesas</li>
+      </a>
+      <a th:href="@{/(categoria='carnes')}">
+        <li>Carnes</li>
+      </a>
+      <a th:href="@{/(categoria='massas')}">
+        <li>Massas</li>
+      </a>
+      <a th:href="@{/(categoria='saladas')}">
+        <li>Saladas</li>
+      </a>
+      <a th:href="@{/(categoria='sopas')}">
+        <li>Sopas</li>
+      </a>
+    </ul>
+  </nav>
+  <a th:href="@{/receitas/cadastro}">
+    <button>
+      <li>Criar nova Receita</li>
+    </button>
+  </a>
+</header>
