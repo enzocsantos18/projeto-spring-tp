@@ -1,29 +1,18 @@
-<header th:fragment="cabecalho">
+<header th:fragment="cabecalho" id="menu">
   <nav>
     <ul>
-      <a th:href="@{/}">
-        <li>Home</li>
-      </a>
-      <a th:href="@{/(categoria='sobremesas')}">
-        <li>Sobremesas</li>
-      </a>
-      <a th:href="@{/(categoria='carnes')}">
-        <li>Carnes</li>
-      </a>
-      <a th:href="@{/(categoria='massas')}">
-        <li>Massas</li>
-      </a>
-      <a th:href="@{/(categoria='saladas')}">
-        <li>Saladas</li>
-      </a>
-      <a th:href="@{/(categoria='sopas')}">
-        <li>Sopas</li>
-      </a>
+        <li><a th:href="@{/}">Home</a></li>
+        <li> <a th:href="@{/(categoria='sobremesas')}">Sobremesas</a></li>
+        <li><a th:href="@{/(categoria='carnes')}">Carnes</a></li>
+        <li> <a th:href="@{/(categoria='massas')}">Massas</a></li>
+        <li> <a th:href="@{/(categoria='saladas')}">Saladas</a></li>
+        <li><a th:href="@{/(categoria='sopas')}">Sopas</a></li>
     </ul>
   </nav>
-  <a th:href="@{/receitas/cadastro}">
-    <button>
-      <li>Criar nova Receita</li>
-    </button>
-  </a>
+   <button>
+      <a th:href="@{/receitas/cadastro}">
+         Criar nova Receita
+      </a>
+   </button>
+
 </header>
