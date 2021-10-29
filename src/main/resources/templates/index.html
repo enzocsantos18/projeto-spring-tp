@@ -11,5 +11,6 @@
 <body>
   <div th:replace="~{cabecalho :: cabecalho}"></div>
   <div th:replace="~{construcao :: construcao}"></div>
+  <h1 th:if="${param.categoria}"> Em Breve, muitas receitas na categoria de <span th:text="${param.categoria}"></span></h1>
 </body>
 </html>
