@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS Categoria;
+
+CREATE TABLE IF NOT EXISTS Categoria (
+    ID SERIAL PRIMARY KEY,
+    NOME VARCHAR(100)
+);
+
+INSERT INTO Categoria(NOME) VALUES ('Saladas');
+INSERT INTO Categoria(NOME) VALUES ('Sopas');
+INSERT INTO Categoria(NOME) VALUES ('Massas');
+INSERT INTO Categoria(NOME) VALUES ('Carnes');
+INSERT INTO Categoria(NOME) VALUES ('Sobremesas');
