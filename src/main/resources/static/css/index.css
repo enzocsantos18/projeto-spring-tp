@@ -11,8 +11,17 @@ a{
    text-decoration: none;
 }
 
+body{
+   background-color:#ededed;
+}
+
 button{
    border: 0;
+}
+
+main{
+   margin: auto;
+   width: 1040px;
 }
 
 

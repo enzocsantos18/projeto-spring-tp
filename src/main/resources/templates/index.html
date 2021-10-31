@@ -4,13 +4,82 @@
   <meta charset="UTF-8">
   <title>Receitas</title>
   <link th:href="@{/css/index.css}" rel="stylesheet">
+  <link th:href="@{/css/pag-inicial.css}" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div th:replace="~{cabecalho :: cabecalho}"></div>
-  <div th:replace="~{construcao :: construcao}"></div>
-  <h1 th:if="${param.categoria}"> Em Breve, muitas receitas na categoria de <span th:text="${param.categoria}"></span></h1>
+  <main>
+     <section>
+         <article>
+            <a th:href="@{/receitas(id=1)}">
+               <picture>
+                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+               </picture>
+               <div class="info">
+                  <p class="category">Sobremesas</p>
+                  <h3>TORTA HOLANDESA</h3>
+                  <span>VER RECEITA</span>
+               </div>
+            </a>
+         </article>
+         <article>
+            <a th:href="@{/receitas(id=1)}">
+               <picture>
+                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+               </picture>
+               <div class="info">
+                  <p class="category">Sobremesas</p>
+                  <h3>TORTA HOLANDESA</h3>
+                  <span>VER RECEITA</span>
+               </div>
+            </a>
+         </article>
+         <article>
+            <a th:href="@{/receitas(id=1)}">
+               <picture>
+                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+               </picture>
+               <div class="info">
+                  <p class="category">Sobremesas</p>
+                  <h3>TORTA HOLANDESA</h3>
+                  <span>VER RECEITA</span>
+               </div>
+            </a>
+         </article>
+         <article>
+            <a th:href="@{/receitas(id=1)}">
+               <picture>
+                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+               </picture>
+               <div class="info">
+                  <p class="category">Sobremesas</p>
+                  <h3>TORTA HOLANDESA</h3>
+                  <span>VER RECEITA</span>
+               </div>
+            </a>
+         </article>
+     </section>
+     <aside>
+         <h1></h1>
+         <article>
+            <a th:href="@{/receitas(id=1)}">
+               <picture>
+                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+               </picture>
+               <div class="info">
+                  <p class="category">Sobremesas</p>
+                  <h3>TORTA HOLANDESA</h3>
+                  <span>VER RECEITA</span>
+               </div>
+            </a>
+         </article>
+     </aside>
+  </main>
+  <!-- <div th:replace="~{construcao :: construcao}"></div> -->
+  <!-- <h1 th:if="${param.categoria}"> Em Breve, muitas receitas na categoria de <span th:text="${param.categoria}"></span></h1> -->
+  
 </body>
 </html>
