@@ -2,11 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Receitas</title>
+  <title>Receitas - Adicionar Receita</title>
   <link th:href="@{/css/index.css}" rel="stylesheet">
 </head>
 <body>
   <div th:replace="~{cabecalho :: cabecalho}"></div>
-  <div th:replace="~{construcao :: construcao}"></div>
+  <main>
+    <section>
+      <h2>Envie sua receita</h2>
+      <form>
+        <fieldset>
+          <label for="nomeReceita">Nome da Receita:</label>
+          <input type="text" name="nomeReceita" id="nomeReceita">
+        </fieldset>
+        <fieldset>
+          <label for="linkImagem">Link imagem:</label>
+          <input type="text" name="linkImagem" id="linkImagem">
+        </fieldset>
+        <div class="form-group">
+          <h3>Informações extras:</h3>
+          <fieldset>
+            <label for="tempoPreparo">Tempo de preparo:</label>
+            <input type="number" name="tempoPreparo" id="tempoPreparo">
+          </fieldset>
+          <fieldset>
+            <label for="porcoes">Porções:</label>
+            <input type="number" name="porcoes" id="porcoes">
+          </fieldset>
+        </div>
+   
+        <div class="form-group">
+          <h3>Receita:</h3>
+          <fieldset>
+            <label for="ingredientes">Ingredientes:</label><br>
+            <span>Escreva os passos linha a linha, assim você facilitará a leitura de sua receita.</span><br> 
+            <textarea name="ingredientes" id="ingredientes" cols="30" rows="10">
+            </textarea>
+          </fieldset>
+          <fieldset>
+            <label for="modoPreparo">Modo preparado:</label><br> 
+            <span>Escreva os passos linha a linha, assim você facilitará a leitura de sua receita.</span><br> 
+            <textarea name="modoPreparo" id="modoPreparo" cols="30" rows="10">
+            </textarea>
+          </fieldset>
+        </div>      
+        <section>
+          <h2>Antes de enviar</h2>
+          <ul>
+            <li>Revise sua receita para ter certeza que as quantidades estão corretas e todos os itens estão listados.</li>
+            <li>Por favor, só envie fotos tiradas por você, fotos tiradas da internet não serão aceitas e você ainda corre o risco de ter seu cadastro removido do site.</li>
+            <li>As informações serão posteriormente formatadas pelo time do TudoGostoso.</li>
+          </ul>
+        </section>
+        <button>Enviar receita</button>
+      </form>
+    </section>
+  </main>
 </body>
 </html>
