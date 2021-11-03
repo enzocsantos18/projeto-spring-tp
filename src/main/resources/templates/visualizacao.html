@@ -11,9 +11,20 @@
 <body>
   <main>
     <div th:replace="~{cabecalho :: cabecalho}"></div>
-    <picture>
-      <img src="https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png" alt="MDN">
-     </picture>
+
+    <article>
+      <a th:href="@{/receitas(id=1)}">
+         <picture>
+            <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+         </picture>
+         <div class="info">
+            <p class="category">Sobremesas</p>
+            <h3>TORTA HOLANDESA</h3>
+            <span>VER RECEITA</span>
+         </div>
+      </a>
+   </article>
+   
   </main>
 </body>
 </html>
