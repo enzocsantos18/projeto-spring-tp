@@ -12,4 +12,9 @@ public class HomeController {
   public String index() {
     return "index";
   }
+
+  @GetMapping("visualizacao")
+  public String visualizacao() {
+    return "visualizacao";
+  }
 }

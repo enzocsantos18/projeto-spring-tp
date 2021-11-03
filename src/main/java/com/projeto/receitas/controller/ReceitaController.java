@@ -18,5 +18,6 @@ public class ReceitaController {
     return "receitas/cadastro";
   }
 
+  
 
 }

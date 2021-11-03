@@ -1,0 +1,99 @@
+body{
+    background-color: #f0f0f0;
+}
+
+section{
+    display: flex;
+    width: 725px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+ }
+ 
+ section article{
+    width: 350px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 7px #e2e3e5;
+ }
+ 
+ section article:nth-child(1), section article:nth-child(2){
+    margin: 0px;
+ }
+
+ .imgPrincipal{
+    width: 500px;
+ }
+
+ .info{
+    float: right;
+    width: 480px;
+ }
+
+ .especificacoes{
+    padding: 6px 0px 6px 0px;
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    margin-bottom: 8px;
+    color: orangered;
+ }
+
+ h1{
+    color: orangered;
+    padding-bottom: 15px;
+    width: 100%;
+ }
+
+ .titulo{
+    font-size: 24px;
+    text-align: inherit;
+ }
+
+ .chip {
+    display: inline-block;
+    padding: 0 15px;
+    text-align: center;
+    height: 29px;
+    font-size: 16px;
+    line-height: 28px;
+    border-radius: 25px;
+    color: white;
+    background-color: orangered;
+}
+
+.receita{
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ul{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.topicos{
+    font-size: 20px;
+}
+
+.reparticao{
+    margin-bottom: 27px;
+}
+
+.tipoPreparo{
+    font-weight: bold;
+    background-color: #f0f0f0;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 9px;
+}
+
+li{
+    margin-bottom: 3px;
+}
+
+.num{
+    list-style: auto;
+}
