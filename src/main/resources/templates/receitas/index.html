@@ -2,12 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Receitas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link th:href="@{/css/index.css}" rel="stylesheet">
+  <link th:href="@{/css/visualizacao.css}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div th:replace="~{cabecalho :: cabecalho}"></div>
-  <div th:replace="~{construcao :: construcao}"></div>
+<div th:replace="~{cabecalho :: cabecalho}"></div>
+  <main>
 
+    <article>
+         <h1 class="titulo">TORTA HOLANDESA</h1>
+         <picture>
+            <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" class="imgPrincipal"/>
+         </picture>
+         <div class="info">
+            <h2 class="">DETALHES</h2>
+            <p class="especificacoes"><span class="material-icons-outlined">schedule</span>   5 minutos</p>
+            <p class="especificacoes"><span class="material-icons-outlined">people</span>   Serve 10 pessoas</p>
+            <p class="especificacoes"><span class="material-icons-outlined">favorite</span>   300 Favoritos</p>
+         </div>
+   </article>
+
+   <article>
+      <div class="chip">Doces</div>
+      <div class="chip">Para o grupo</div>
+      <div class="chip">Forno</div>
+      <div class="chip">Natal</div>
+   </article>
+
+   <article class="receita">
+      <h1 class="topicos">INGREDIENTES</h1>
+      <ul>
+         <li>150 de biscoito de maisena</li>
+         <li>100 g de manteiga sem sal</li>
+         <li>1 xícara de açúcar refinado</li>
+         <li>200 g de manteiga sem sal</li>
+         <li>500 ml de creme de leite gelado</li>
+         <li>170 g de chocolate meio amargo derretido</li>
+         <li>200 g de creme de leite</li>
+      </ul>
+   </article>
+
+   <article class="receita">
+      <h1 class="topicos">MODO DE PREPARO</h1>
+      <div class="reparticao">
+         <p class="tipoPreparo">MASSA</p>
+         <ul>
+            <li class="num">Triture o biscoito no processador e misture com a manteiga, formando uma farofinha.</li>
+            <li class="num">Forre uma forma de aro removível com a farofinha, pressionando bem.</li>
+            <li class="num">Pré-asse a massa (180° C), por cerca de 10 minutos.</li>
+            <li class="num">Retira a massa do forno e espere esfriar.</li>
+         </ul>
+      </div>
+
+      <div class="reparticao">
+         <p class="tipoPreparo">RECHEIO</p>
+         <ul>
+            <li class="num">Na batedeira, misture o açucar com a manteiga até fica homogêneo.</li>
+            <li class="num">Adicione o creme de leite e a essência de baunilha e volte a bater.</li>
+            <li class="num">Cobertura: Misture o chocolate meio amargo derretido com o creme de leite.</li>
+         </ul>
+      </div>
+
+      <div class="reparticao">
+         <p class="tipoPreparo">MONTAGEM</p>
+         <ul>
+            <li class="num">Adicione o recheio e leve à geladeira por 4 horas.</li>             
+            <li class="num">Retire da geladeira e despeje a cobertura por cima.</li>
+            <li class="num">Volte à geladeira por mais 6 horas.</li>
+         </ul>
+      </div>
+
+      <div class="reparticao">
+         <p class="tipoPreparo">INFORMAÇÕES ADICIONAIS</p>
+         <p>Você sabia que a torta holandesa não é originária da Holanda? Ela foi criada por uma brasileira em Campinas, São Paulo, que deu esse nome ao doce por causa de uma viagem que tinha feito à Holanda. Uma forma deliciosa de relembrar os bons momentos, não? <br>
+            A torta holandesa, assim como sua "prima" torta alemã, é muito querida por ser prática e fácil de fazer. Confira algumas dicas pra incrementar sua receita e fazer a torta holandesa perfeita!<br>  
+            O creme de manteiga é super importante para que sua torta fique impecável, por isso, para obter o creme perfeito, é preciso que bata bem a manteiga junto com o açúcar com a batedeira, por mais ou menos 5 minutos. Isso faz com o creme fique super fofinho e aerado!
+         </p>
+      </div>
+   </article>
+   
+  </main>
 </body>
 </html>

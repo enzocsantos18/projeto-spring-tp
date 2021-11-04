@@ -13,8 +13,4 @@ public class HomeController {
     return "index";
   }
 
-  @GetMapping("visualizacao")
-  public String visualizacao() {
-    return "visualizacao";
-  }
 }
