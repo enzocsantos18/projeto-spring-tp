@@ -21,7 +21,10 @@ button{
 
 main{
    margin: 16px auto;
-   width: 1040px;
+   width: 100%;
+   max-width: 1040px;
 }
+
+
 
 

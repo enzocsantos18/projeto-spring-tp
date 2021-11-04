@@ -6,15 +6,12 @@ section{
 }
 
 section article{
-   width: 350px;
+   width: 100%;
+   max-width: 350px;
    background-color: #fff;
    border-radius: 5px;
    margin-top: 10px;
    box-shadow: 2px 2px 7px #e2e3e5;
-}
-
-section article:nth-child(1), section article:nth-child(2){
-   margin: 0px;
 }
 
 img{
@@ -112,4 +109,21 @@ aside picture {
 
 aside picture img{
    height: 170px;
+}
+
+@media (max-width: 1000px)
+{
+   aside
+   {
+      display: none;
+   }
+}
+
+@media (max-width: 700px)
+{
+   section
+   {
+      align-items: center;
+      justify-content: center;
+   }
 }
