@@ -1,0 +1,102 @@
+* {
+   box-sizing: border-box;
+}
+
+h2{
+   font-size: 2em;
+}
+
+h3{
+   font-size: 24px;
+}
+
+h2, h3{
+   color: orangered;
+}
+
+small{
+   font-size: 14px;
+   color:#595959;
+}
+
+input, textarea {
+   padding: 10px;
+   border-radius: 8px;
+   border: 0;
+   outline: 0;
+   resize: none;
+   display: block;
+   border: 2px solid rgb(194, 194, 194);
+   margin-top: 8px;
+   width: 98%;
+}
+
+button {
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 8px;
+   background-color: orangered;
+   color: white;
+   text-transform: uppercase;
+   font-weight: bold;
+}
+
+.form-section {
+   padding: 30px;
+   background-color: white;
+   border-radius: 8px;
+   margin: 10px 0px;
+   width: 100%;
+}
+
+.form-section fieldset {
+   border: 0;
+   width: 100%;
+   margin: 30px 0px;
+}
+
+.form-group {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.form-group fieldset {
+   width: 50%;
+}
+
+.form-section fieldset label {
+   border: 0;
+   margin: 30px 0px;
+   width: 100%;
+}
+
+
+
+.warnings{ 
+   background-color: white;
+   border-radius: 8px;
+}
+
+.warnings ul {
+   margin-left: 15px;
+}
+
+.warnings ul li{
+   font-size: 14px;
+   margin: 10px 0;
+   width: 80%;
+}
+
+
+@media (max-width: 1000px)
+{
+   .form-group
+   {
+      display: block;
+   }
+
+   .form-group fieldset {
+      width: 100%;
+   }
+}
