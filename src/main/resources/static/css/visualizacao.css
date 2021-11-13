@@ -36,7 +36,13 @@ section{
     /* border-style: solid; */
     /* border-width: 1px; */
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
     color: orangered;
+ }
+
+ .especificacoes span{
+   padding-right: 8px;
  }
 
  h1{
