@@ -27,12 +27,32 @@
       <div class="form-group">
         <fieldset>
           <label for="tempoPreparo">Tempo de preparo:</label>
-          <input type="number" name="tempoPreparo" id="tempoPreparo">
+          <input type="time" name="tempoPreparo" id="tempoPreparo">
         </fieldset>
         <fieldset>
           <label for="porcoes">Porções:</label>
           <input type="number" name="porcoes" id="porcoes">
         </fieldset>
+        <fieldset>
+         <label for="categoria">Categoria:</label>
+         <!-- <input type="time" name="categoria" id="categoria"> -->
+         <select name="categoria" id="categoria">
+            <option value="0">--</option>
+            <option value="1">Saladas</option>
+            <option value="2">Sopas</option>
+            <option value="3">Massas</option>
+            <option value="4">Carnes</option>
+            <option value="5">Sobremesas</option>
+         </select>
+       </fieldset>
+       <fieldset class="checkboxgroup">
+         <label for="tags">Tags:</label>
+         <p><input type="checkbox" />Rápidas     </p>
+         <p><input type="checkbox" />Light       </p>
+         <p><input type="checkbox" />Vegetariana </p>
+         <p><input type="checkbox" />Vegana      </p>
+         <p><input type="checkbox" />Sem forno   </p>
+       </fieldset>
       </div>
       <h3>Receita:</h3>
 

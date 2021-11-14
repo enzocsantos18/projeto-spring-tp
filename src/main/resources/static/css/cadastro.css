@@ -19,7 +19,7 @@ small{
    color:#595959;
 }
 
-input, textarea {
+input, textarea, select {
    padding: 10px;
    border-radius: 8px;
    border: 0;
@@ -72,6 +72,20 @@ button {
 }
 
 
+.checkboxgroup input{
+   width: auto;
+   float: left;
+   margin-top: 3px;
+   margin-right: 8px;
+}
+
+.checkboxgroup p:nth-child(2){
+   margin-top: 8px;
+}
+
+input:checked{
+   background-color: red;
+}
 
 .warnings{ 
    background-color: white;
