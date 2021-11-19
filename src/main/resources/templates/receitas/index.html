@@ -16,7 +16,8 @@
   <main>
 
     <article>
-         <h1 class="titulo">TORTA HOLANDESA</h1>
+         <h1 class="titulo" th:text="${'TITULO: ' + nome}"></h1>
+         <!-- <h1 class="titulo">[(${nome})]</h1> -->
          <picture>
             <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" class="imgPrincipal"/>
          </picture>
