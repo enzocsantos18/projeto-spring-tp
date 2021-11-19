@@ -50,25 +50,20 @@ INSERT INTO Receita(NOME, LINK_IMG, TEMPO, QT_PORCAO, ID_CATEGORIA, INGREDIENTES
     '00:45:00', 
     8, 
     5, 
-    'Para Base: 1. Bolacha; 2. Manteiga;
-
-    Para o recheio: 1. 250 gramas de margarina; 2. 180 gramas de açúcar refinado; 3. 600 mililitros de creme de leite sem soro; 4. 80 mililitros de leite condensado;',
-   'Para o creme: 1. Bata na batedeira a margarina e o açúcar até obter um creme próximo ao branco; 2. Acrescente o leite condensado e continue batendo; 3. Em seguida, adicione o creme de leite e mexa bem;');
+    'Bolacha; Manteiga; 250 gramas de margarina; 180 gramas de açúcar refinado; 600 mililitros de creme de leite sem soro; 80 mililitros de leite condensado;',
+     'Bata na batedeira a margarina e o açúcar até obter um creme próximo ao branco; Acrescente o leite condensado e continue batendo; Em seguida, adicione o creme de leite e mexa bem;');
 INSERT INTO Receita(NOME, LINK_IMG, TEMPO, QT_PORCAO, ID_CATEGORIA, INGREDIENTES, MODO_PREPARO) VALUES 
    ('Macarrão ao alho e o oleo', 
     'https://img.itdg.com.br/tdg/images/recipes/000/057/710/324571/324571_original.jpg?mode=crop&width=710&height=400', 
     '00:15:00', 
     1, 
     3, 
-    '1. 5 dentes de alho amassados
-     2. 5 colheres de sopa de óleo
-     3. 1 colher de sopa de manteiga
-     4. Sal a gosto',
-     '1. Amasse bem o alho juntamente com o sal, formando uma pasta;
-     2. Em uma frigideira, coloque o alho amassado e o óleo;
-     3. Frite em fogo médio sem deixar o alho queimar, só dourar;
-     4. Acrescente a manteiga e deixe ferver um pouco, só para incorporar bem o sabor, mexendo sempre;
-     5. Coloque sobre o macarrão imediatamente;');
+    '5 dentes de alho amassados; 5 colheres de sopa de óleo; 1 colher de sopa de manteiga; Sal a gosto',
+     'Amasse bem o alho juntamente com o sal, formando uma pasta;
+     Em uma frigideira, coloque o alho amassado e o óleo;
+     Frite em fogo médio sem deixar o alho queimar, só dourar;
+     Acrescente a manteiga e deixe ferver um pouco, só para incorporar bem o sabor, mexendo sempre;
+     Coloque sobre o macarrão imediatamente;');
 
 /* TABLE TAG_RECEITA */
 CREATE TABLE IF NOT EXISTS Tag_Receita (
