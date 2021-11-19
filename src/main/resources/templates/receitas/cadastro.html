@@ -13,46 +13,46 @@
 <main>
   <section class="form-section">
     <h2>Envie sua receita</h2>
-    <form>
+    <form action="#" th:action="@{/receitas/cadastro}" th:object="${novaReceita}" method="post">
       <fieldset>
         <label for="nomeReceita">Nome da Receita:</label>
-        <input type="text" name="nomeReceita" id="nomeReceita">
+        <input th:field="*{nome}"  type="text" name="nomeReceita" id="nomeReceita">
       </fieldset>
       <fieldset>
         <label for="linkImagem">Link imagem:</label>
-        <input type="text" name="linkImagem" id="linkImagem">
+        <input th:field="*{linkImg}" type="text" name="linkImagem" id="linkImagem">
       </fieldset>
       <h3>Informações extras:</h3>
 
       <div class="form-group">
         <fieldset>
           <label for="tempoPreparo">Tempo de preparo:</label>
-          <input type="time" name="tempoPreparo" id="tempoPreparo">
+          <input th:field="*{tempo}" type="number" name="tempoPreparo" id="tempoPreparo">
         </fieldset>
         <fieldset>
           <label for="porcoes">Porções:</label>
-          <input type="number" name="porcoes" id="porcoes">
+          <input th:field="*{porcao}" type="number" name="porcoes" id="porcoes">
         </fieldset>
         <fieldset>
-         <label for="categoria">Categoria:</label>
-         <!-- <input type="time" name="categoria" id="categoria"> -->
-         <select name="categoria" id="categoria">
+          <label for="categoria">Categoria:</label>
+          <!-- <input type="time" name="categoria" id="categoria"> -->
+          <select th:field="*{idCategoria}"  name="categoria" id="categoria">
             <option value="0">--</option>
             <option value="1">Saladas</option>
             <option value="2">Sopas</option>
             <option value="3">Massas</option>
             <option value="4">Carnes</option>
             <option value="5">Sobremesas</option>
-         </select>
-       </fieldset>
-       <fieldset class="checkboxgroup">
-         <label for="tags">Tags:</label>
-         <p><input type="checkbox" />Rápidas     </p>
-         <p><input type="checkbox" />Light       </p>
-         <p><input type="checkbox" />Vegetariana </p>
-         <p><input type="checkbox" />Vegana      </p>
-         <p><input type="checkbox" />Sem forno   </p>
-       </fieldset>
+          </select>
+        </fieldset>
+        <fieldset class="checkboxgroup">
+          <label for="tags">Tags:</label>
+          <p><input name="tags" value="1"  type="checkbox" />Rápidas     </p>
+          <p><input name="tags" value="2"  type="checkbox" />Light       </p>
+          <p><input name="tags" value="3"  type="checkbox" />Vegetariana </p>
+          <p><input name="tags" value="4"  type="checkbox" />Vegana      </p>
+          <p><input name="tags" value="5"  type="checkbox" />Sem forno   </p>
+        </fieldset>
       </div>
       <h3>Receita:</h3>
 
@@ -60,13 +60,13 @@
         <fieldset>
           <label for="ingredientes">Ingredientes:</label><br>
           <small>Escreva os passos linha a linha, assim você facilitará a leitura de sua receita.</small><br>
-          <textarea name="ingredientes" id="ingredientes" cols="30" rows="10">
+          <textarea th:field="*{ingredientes}"  name="ingredientes" id="ingredientes" cols="30" rows="10">
             </textarea>
         </fieldset>
         <fieldset>
           <label for="modoPreparo">Modo preparado:</label><br>
           <small>Escreva os passos linha a linha, assim você facilitará a leitura de sua receita.</small><br>
-          <textarea name="modoPreparo" id="modoPreparo" cols="30" rows="10">
+          <textarea th:field="*{modoPreparo}" name="modoPreparo" id="modoPreparo" cols="30" rows="10">
             </textarea>
         </fieldset>
       </div>

@@ -1,10 +1,13 @@
-package com.projeto.receitas.model;
+package com.projeto.receitas.service;
 
 import java.util.List;
 import java.util.Map;
 
+import com.projeto.receitas.dao.ReceitaDAO;
+import com.projeto.receitas.dto.NovaReceitaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ReceitaService {
@@ -18,5 +21,9 @@ public class ReceitaService {
    public List<Map<String, Object>> selecionarTagsReceita(int id){
       return rdao.selecionarTagsReceita(id);
   }
-   
+
+   @Transactional
+   public void adicionar(NovaReceitaDTO novaReceita) {
+      rdao.adicionar(novaReceita);
+   }
 }
