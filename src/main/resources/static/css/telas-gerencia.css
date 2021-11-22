@@ -21,16 +21,9 @@
    color: white;
 }
 
-.tabela button {
-   padding: 4px;
-   background-color: orangered;
-   color: white;
-   border: 0;
-   border-radius: 8px;
-   margin-right: 8px;
-}
 
 .link-btn {
+   display: inline-block;
    text-decoration: none;
    border: 0;
    background: orangered;
@@ -38,6 +31,8 @@
    border-radius: 8px;
    color: white;
    margin: 10px 0;
+   margin-right: 8px;
+
 }
 
 .link-btn:hover {
