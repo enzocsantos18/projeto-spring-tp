@@ -28,9 +28,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>01</td>
-        <td>Rápido</td>
+      <tr th:each="tag : ${tags}">
+        <td th:text="${tag.id}"></td>
+        <td th:text="${tag.nome}"></td>
         <td><a class="link-btn">Editar</a><a class="link-btn">Deletar</a></td>
       </tr>
       </tbody>
