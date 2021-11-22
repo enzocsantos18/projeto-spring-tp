@@ -8,6 +8,7 @@ section{
 section article{
    width: 100%;
    max-width: 350px;
+   max-height: 300px;
    background-color: #fff;
    border-radius: 5px;
    margin-top: 10px;
@@ -71,6 +72,7 @@ aside{
    width: 295px;
    background-color: #fff;
    border-radius: 5px;
+   padding-bottom: 20px;
 }
 
 aside article{
@@ -92,6 +94,7 @@ h1{
 
 aside article{
    height: 170px;
+   margin-top: 10px;
 }
 
 aside article a{
@@ -101,6 +104,7 @@ aside article a{
 aside .info{
    margin: 50px auto;
    height: auto;
+   max-width: 165px;
 }
 
 aside picture {

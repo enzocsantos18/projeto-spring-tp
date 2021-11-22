@@ -21,24 +21,12 @@ public class HomeController {
   @GetMapping
   public String index(Model model) {
     List<Map<String, Object>> mapareceitas = receitaService.exibirReceitas();
-
     model.addAttribute("receitas", mapareceitas);
-    //List<String> receitas = new ArrayList<>();
-    //List<String> nomes = new ArrayList<>();
-    //List<Integer> id = new ArrayList<>();
-    //    for (Map<String, Object> receita : //mapareceitas) {
-//
-    //      nomes.add(receita.get("nome").toString().//toUpperCase());
-    //      id.add(Integer.parseInt(receita.get("id").//toString()));
-    //      //receitas.add(receita.get("id"));
-    //      //receitas.add(receita.get("categoria").//toString());
-    //      model.addAttribute("link_img", receita.get//("link_img"));
-    //      model.addAttribute("categoria", receita.get//("categoria"));
-    //      //receitas.add(receita.get("link_img").//toString());
-    //    }
-    //    model.addAttribute("receitas", receitas);
-    //    model.addAttribute("id", id);
-    //    model.addAttribute("nome", nomes);
+
+    List<Map<String, Object>> mapaAside = receitaService.exibirReceitasTag(1);
+    model.addAttribute("asides", mapaAside);
+
+
     return "index";
   }
 

@@ -26,21 +26,22 @@
             </div>
          </a>
       </article>
-     <!-- <aside>
-         <h1>DIRETAMENTE DO FORNO</h1>
-         <article>
-            <a th:href="@{/receitas/id}">
+   </section>
+     <aside>
+         <h1>RECEITINHAS RÁPIDAS</h1>
+         <article th:each="aside : ${asides}">
+            <a th:href="@{/receitas/aside.id}">
                <picture>
-                  <img th:src="${link_img}" />
+                  <img th:src="${aside.link_img}" />
                </picture>
                <div class="info">
-                  <p class="category" th:text="${categoria}"></p>
-                  <h3 th:text="${nome}"></h3>
+                  <p class="category" th:text="${aside.categoria}"></p>
+                  <h3 th:text="${aside.nome}"></h3>
                   <span>VER RECEITA</span>
                </div>
             </a>
          </article>
-     </aside> -->
+     </aside> 
   </main>
   <!-- <div th:replace="~{construcao :: construcao}"></div> -->
   <!-- <h1 th:if="${param.categoria}"> Em Breve, muitas receitas na categoria de <span th:text="${param.categoria}"></span></h1> -->
