@@ -15,7 +15,7 @@
   <main class="pag-inicial">
      <section>
       <article th:each="receita : ${receitas}">
-         <a th:href="${'receitas/' + receita.id}">
+         <a th:href="${'/receitas/' + receita.id}">
             <picture>
                <img th:src="${receita.link_img}" />
             </picture>
@@ -30,7 +30,7 @@
      <aside>
          <h1>RECEITINHAS RÁPIDAS</h1>
          <article th:each="aside : ${asides}">
-            <a th:href="${'receitas/' + aside.id}">
+            <a th:href="${'/receitas/' + aside.id}">
                <picture>
                   <img th:src="${aside.link_img}" />
                </picture>
