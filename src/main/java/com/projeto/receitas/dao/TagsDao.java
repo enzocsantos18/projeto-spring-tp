@@ -1,5 +1,6 @@
 package com.projeto.receitas.dao;
 
+import com.projeto.receitas.model.Tag;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
@@ -27,5 +28,8 @@ public class TagsDao {
     return (List<Map<String, Object>>) jdbc.queryForList(sql);
   }
 
+  public void adicionar(Tag tag) {
+    jdbc.update("INSERT INTO Tag(nome) values ('" + tag.getNome()+ "');");
+  }
 }
 

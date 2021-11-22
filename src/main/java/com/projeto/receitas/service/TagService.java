@@ -3,6 +3,7 @@ package com.projeto.receitas.service;
 import com.projeto.receitas.dao.ReceitaDAO;
 import com.projeto.receitas.dao.TagsDao;
 import com.projeto.receitas.dto.NovaReceitaDTO;
+import com.projeto.receitas.model.Tag;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,8 @@ public class TagService {
    return tagsDao.exibirTags();
    }
 
-
+   @Transactional
+   public void adicionar(Tag tag) {
+      tagsDao.adicionar(tag);
+   }
 }

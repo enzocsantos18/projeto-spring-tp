@@ -17,7 +17,15 @@
   <main>
     <h2 class="titulo">Tags</h2>
 
-    <a class="link-btn">Criar nova tag</a>
+    <form action="#" th:action="@{/tags/cadastro}" th:object="${novaTag}" method="post">
+      <fieldset>
+        <label for="nomeTag">Nome da Tag:</label>
+        <input th:field="*{nome}"  type="text" name="nomeTag" id="nomeTag">
+      </fieldset>
+
+      <button>Criar nova tag</button>
+
+    </form>
 
     <table class="tabela">
       <thead>
