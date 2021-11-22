@@ -30,6 +30,19 @@ public class HomeController {
     return "index";
   }
 
+  @GetMapping("/categoria/{id}")
+  public String index(@PathVariable("id") int id, Model model) {
+    List<Map<String, Object>> mapareceitas = receitaService.exibirReceitasCategoria(id);
+    model.addAttribute("receitas", mapareceitas);
+
+    List<Map<String, Object>> mapaAside = receitaService.exibirReceitasTag(1);
+    model.addAttribute("asides", mapaAside);
+    
+    return "index";
+  }
+
+
+
 
   
 

@@ -30,6 +30,10 @@ public class ReceitaService {
       return rdao.exibirReceitasTag(id);
    }
 
+   public List<Map<String, Object>> exibirReceitasCategoria(int id){
+      return rdao.exibirReceitasCategoria(id);
+   }
+
    @Transactional
    public void adicionar(NovaReceitaDTO novaReceita) {
       rdao.adicionar(novaReceita);
