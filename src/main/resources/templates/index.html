@@ -14,70 +14,33 @@
   <div th:replace="~{cabecalho :: cabecalho}"></div>
   <main class="pag-inicial">
      <section>
-         <article>
-            <a th:href="@{/receitas/1}">
-               <picture>
-                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
-               </picture>
-               <div class="info">
-                  <p class="category">Sobremesas</p>
-                  <h3>TORTA HOLANDESA</h3>
-                  <span>VER RECEITA</span>
-               </div>
-            </a>
-         </article>
-         <article>
-            <a th:href="@{/receitas/1}">
-               <picture>
-                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
-               </picture>
-               <div class="info">
-                  <p class="category">Sobremesas</p>
-                  <h3>TORTA HOLANDESA</h3>
-                  <span>VER RECEITA</span>
-               </div>
-            </a>
-         </article>
-         <article>
-            <a th:href="@{/receitas/1}">
-               <picture>
-                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
-               </picture>
-               <div class="info">
-                  <p class="category">Sobremesas</p>
-                  <h3>TORTA HOLANDESA</h3>
-                  <span>VER RECEITA</span>
-               </div>
-            </a>
-         </article>
-         <article>
-            <a th:href="@{/receitas/1}">
-               <picture>
-                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
-               </picture>
-               <div class="info">
-                  <p class="category">Sobremesas</p>
-                  <h3>TORTA HOLANDESA</h3>
-                  <span>VER RECEITA</span>
-               </div>
-            </a>
-         </article>
-     </section>
-     <aside>
+      <article th:each="receita : ${receitas}">
+         <a th:href="${'receitas/' + receita.id}">
+            <picture>
+               <img th:src="${receita.link_img}" />
+            </picture>
+            <div class="info">
+               <p class="category" th:text="${receita.categoria}"></p>
+               <h3 th:text="${receita.nome}"></h3>
+               <span>VER RECEITA</span>
+            </div>
+         </a>
+      </article>
+     <!-- <aside>
          <h1>DIRETAMENTE DO FORNO</h1>
          <article>
-            <a th:href="@{/receitas/1}">
+            <a th:href="@{/receitas/id}">
                <picture>
-                  <img src="https://s2.glbimg.com/Yy2awmjcK2tc5XB_32BghmjP5tk=/0x0:380x220/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/15/00/01/912/tortacalipso.jpg" />
+                  <img th:src="${link_img}" />
                </picture>
                <div class="info">
-                  <p class="category">Sobremesas</p>
-                  <h3>TORTA HOLANDESA</h3>
+                  <p class="category" th:text="${categoria}"></p>
+                  <h3 th:text="${nome}"></h3>
                   <span>VER RECEITA</span>
                </div>
             </a>
          </article>
-     </aside>
+     </aside> -->
   </main>
   <!-- <div th:replace="~{construcao :: construcao}"></div> -->
   <!-- <h1 th:if="${param.categoria}"> Em Breve, muitas receitas na categoria de <span th:text="${param.categoria}"></span></h1> -->

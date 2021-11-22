@@ -45,6 +45,12 @@ public class ReceitaDAO {
         return jdbc.queryForList(sql, obj);
     }
 
+    public List<Map<String, Object>> exibirReceitas() {
+        String sql = "SELECT r.*, c.nome as categoria FROM receita r INNER JOIN categoria c ON r.id_categoria = c.id";
+        List<Map<String, Object>> receitas = (List<Map<String, Object>>) jdbc.queryForList(sql);
+        return receitas;
+    }
+
     @Transactional
     public void adicionar(NovaReceitaDTO novaReceita) {
 

@@ -3,7 +3,6 @@ package com.projeto.receitas.controller;
 import com.projeto.receitas.dto.NovaReceitaDTO;
 import com.projeto.receitas.service.ReceitaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
