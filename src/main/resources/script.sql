@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Tag (
                                    NOME VARCHAR(100)
 );
 
-INSERT INTO Tag(NOME) VALUES ('Rápidas');
+INSERT INTO Tag(NOME) VALUES ('Rapidas');
 INSERT INTO Tag(NOME) VALUES ('Light');
 INSERT INTO Tag(NOME) VALUES ('Vegetariana');
 INSERT INTO Tag(NOME) VALUES ('Vegana');

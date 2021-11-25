@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <title>Receitas - Adicionar Receita</title>
@@ -35,23 +35,21 @@
         </fieldset>
         <fieldset>
           <label for="categoria">Categoria:</label>
-          <!-- <input type="time" name="categoria" id="categoria"> -->
           <select th:field="*{idCategoria}"  name="categoria" id="categoria">
             <option value="0">--</option>
-            <option value="1">Saladas</option>
-            <option value="2">Sopas</option>
-            <option value="3">Massas</option>
-            <option value="4">Carnes</option>
-            <option value="5">Sobremesas</option>
+            <option th:each="categoria : ${categorias}" th:text="${categoria.nome}" th:value="${categoria.id}"></option>
           </select>
         </fieldset>
         <fieldset class="checkboxgroup">
           <label for="tags">Tags:</label>
-          <p><input name="tags" value="1"  type="checkbox" />Rápidas     </p>
+          <p th:each="tag : ${tags}" >
+            <input th:value="${tag.id}"  type="checkbox" th:text="${tag.nome}">
+          </p>
+          <!-- <p><input name="tags" value="1"  type="checkbox" />Rápidas     </p>
           <p><input name="tags" value="2"  type="checkbox" />Light       </p>
           <p><input name="tags" value="3"  type="checkbox" />Vegetariana </p>
           <p><input name="tags" value="4"  type="checkbox" />Vegana      </p>
-          <p><input name="tags" value="5"  type="checkbox" />Sem forno   </p>
+          <p><input name="tags" value="5"  type="checkbox" />Sem forno   </p> -->
         </fieldset>
       </div>
       <h3>Receita:</h3>

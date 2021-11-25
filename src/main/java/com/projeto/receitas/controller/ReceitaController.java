@@ -2,6 +2,7 @@ package com.projeto.receitas.controller;
 
 import com.projeto.receitas.dto.NovaReceitaDTO;
 import com.projeto.receitas.service.ReceitaService;
+import com.projeto.receitas.service.OptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -19,13 +20,11 @@ public class ReceitaController {
 
     @Autowired
     private ReceitaService receitaService;
+    @Autowired
+    private OptionService optionService;
 
     @GetMapping("/{id}")
     public String index(@PathVariable("id") int id, Model model) {
-        //  model.addAttribute("receita", new Receita());
-        //  model.addAttribute("nome", "TORTA <br> HOLANDESA");
-
-
         Map<String, Object> mapa = receitaService.selecionarReceita(id);
         model.addAttribute("nome", mapa.get("nome").toString().toUpperCase());
         model.addAttribute("porcao", mapa.get("qt_porcao"));
@@ -46,15 +45,18 @@ public class ReceitaController {
 
     @GetMapping("cadastro")
     public String cadastro(Model model) {
-        model.addAttribute("novaReceita", new NovaReceitaDTO());
+         model.addAttribute("novaReceita", new NovaReceitaDTO());
+         
+         List<Map<String, Object>> tags = optionService.exibirTags();
+         model.addAttribute("tags", tags);
 
-        return "receitas/cadastro";
+         List<Map<String, Object>> categorias = optionService.exibirCategorias();
+         model.addAttribute("categorias", categorias);
+         return "receitas/cadastro";
     }
 
     @PostMapping("cadastro")
     public String cadastroPost(@ModelAttribute NovaReceitaDTO novaReceita, @RequestParam("tags") List<Integer> tags) {
-
-
         for (Integer tag: tags) {
             novaReceita.getIdTags().add(tag);
         }
