@@ -25,6 +25,10 @@ main{
    max-width: 1040px;
 }
 
-
+.titulo {
+   color: orangered;
+   font-size: 32px;
+   font-weight: bold;
+}
 
 
