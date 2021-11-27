@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tags</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link th:href="@{/css/pag-inicial.css}" rel="stylesheet">
+  <link th:href="@{/css/index.css}" rel="stylesheet">
+  <link th:href="@{/css/telas-gerencia.css}" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{cabecalho :: cabecalho}"></div>
+<main>
+  <h2 class="titulo">Tags</h2>
+
+  <form action="#" th:action="@{/tags/cadastro}" th:object="${novaTag}" method="post">
+    <fieldset>
+      <label for="nomeTag">Nome da Tag:</label>
+      <input th:field="*{nome}" type="text" name="nomeTag" id="nomeTag">
+    </fieldset>
+
+    <button>Criar nova tag</button>
+
+  </form>
+
+  <table class="tabela">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tag : ${tags}">
+      <td th:text="${tag.id}"></td>
+      <td th:text="${tag.nome}"></td>
+      <td><a class="link-btn" th:href="@{/tags/editar/{id}(id=${tag.id})}">Editar</a>
+        <a    th:href="@{/tags/deletar/{id}(id=${tag.id})}"     class="link-btn">Deletar</a></td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>
