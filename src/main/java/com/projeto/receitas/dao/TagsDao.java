@@ -24,12 +24,32 @@ public class TagsDao {
 
 
   public List<Map<String, Object>> exibirTags() {
-    String sql = "SELECT * from tag";
+    String sql = "SELECT * from tag order by id";
     return (List<Map<String, Object>>) jdbc.queryForList(sql);
   }
 
   public void adicionar(Tag tag) {
     jdbc.update("INSERT INTO Tag(nome) values ('" + tag.getNome()+ "');");
+  }
+
+  public Map<String, Object> pesquisar(Integer id) {
+
+    String sql = "SELECT * from tag where id = ?";
+
+    Object[] obj = new Object[1];
+    obj[0] = id;
+    return jdbc.queryForMap(sql, obj);
+
+  }
+
+  public void atualizar(Integer id, String nome) {
+
+    String sql = "UPDATE tag SET nome = ? where id = ? ";
+
+    Object[] obj = new Object[2];
+    obj[0] = nome;
+    obj[1] = id;
+    jdbc.update(sql, obj);
   }
 }
 

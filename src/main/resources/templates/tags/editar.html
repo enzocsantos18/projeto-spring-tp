@@ -16,35 +16,16 @@
 <body>
 <div th:replace="~{cabecalho :: cabecalho}"></div>
 <main>
-  <h2 class="titulo">Tags</h2>
+  <h2 class="titulo">Editar Tag</h2>
 
-  <form action="#" th:action="@{/tags/cadastro}" th:object="${novaTag}" method="post">
+  <form action="#" th:action="@{/tags/editar/__${id}__}" th:object="${novaTag}" method="POST">
     <fieldset>
-      <label for="nomeTag">Nome da Tag:</label>
-      <input th:field="*{nome}" type="text" name="nomeTag" id="nomeTag">
+      <label for="nome">Nome da Tag:</label>
+      <input th:value="${tagAntigaNome}" th:name="nome" type="text" name="nome" id="nome">
     </fieldset>
 
-    <button>Criar nova tag</button>
-
+    <button>Editar tag</button>
   </form>
-
-  <table class="tabela">
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="tag : ${tags}">
-      <td th:text="${tag.id}"></td>
-      <td th:text="${tag.nome}"></td>
-      <td><a class="link-btn" th:href="@{/tags/editar/{id}(id=${tag.id})}">Editar</a><a
-          class="link-btn">Deletar</a></td>
-    </tr>
-    </tbody>
-  </table>
 </main>
 </body>
 </html>
