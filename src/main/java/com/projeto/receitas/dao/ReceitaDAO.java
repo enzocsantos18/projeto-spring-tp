@@ -67,6 +67,16 @@ public class ReceitaDAO {
         return jdbc.queryForList(sql, obj);
     }
 
+    public void deletarReceita(int id){
+      Object[] obj = new Object[1];
+      obj[0] = id;
+      String sqlTagReceita = "delete from Tag_Receita where id_receita = ?";
+      jdbc.update(sqlTagReceita, obj);
+
+      String sqlReceita = "delete from receita where id = ?";
+      jdbc.update(sqlReceita, obj);
+    }
+
     @Transactional
     public void adicionar(NovaReceitaDTO novaReceita) {
 
