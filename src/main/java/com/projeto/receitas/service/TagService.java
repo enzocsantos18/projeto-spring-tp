@@ -31,4 +31,9 @@ public class TagService {
   public void atualizar(Integer id, String nome) {
     tagsDao.atualizar(id, nome);
   }
+
+  @Transactional
+  public void deletar(Integer id) {
+    tagsDao.deletar(id);
+  }
 }

@@ -40,8 +40,8 @@
     <tr th:each="tag : ${tags}">
       <td th:text="${tag.id}"></td>
       <td th:text="${tag.nome}"></td>
-      <td><a class="link-btn" th:href="@{/tags/editar/{id}(id=${tag.id})}">Editar</a><a
-          class="link-btn">Deletar</a></td>
+      <td><a class="link-btn" th:href="@{/tags/editar/{id}(id=${tag.id})}">Editar</a>
+        <a    th:href="@{/tags/deletar/{id}(id=${tag.id})}"     class="link-btn">Deletar</a></td>
     </tr>
     </tbody>
   </table>

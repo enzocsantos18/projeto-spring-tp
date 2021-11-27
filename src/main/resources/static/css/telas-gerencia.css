@@ -46,6 +46,11 @@ fieldset input {
    color: white;
 }
 
+form > p {
+   margin-right: 30px;
+}
+
+
 
 .link-btn, button {
    display: inline-block;
@@ -58,6 +63,10 @@ fieldset input {
    margin: 10px 0;
    margin-right: 8px;
 
+}
+
+.btn-excluir {
+   background-color: red !important;
 }
 
 .link-btn:hover {

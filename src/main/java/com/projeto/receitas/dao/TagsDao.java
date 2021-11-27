@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class TagsDao {
@@ -54,6 +55,26 @@ public class TagsDao {
     Object[] obj = new Object[2];
     obj[0] = nome;
     obj[1] = id;
+    jdbc.update(sql, obj);
+  }
+
+  private void deletarTagReceita(Integer id) {
+    String sql = "DELETE from tag_receita where id_tag = ? ";
+
+    Object[] obj = new Object[1];
+    obj[0] = id;
+    jdbc.update(sql, obj);
+  }
+
+  @Transactional
+  public void deletar(Integer id) {
+
+    deletarTagReceita(id);
+
+    String sql = "DELETE from TAG where id = ? ";
+
+    Object[] obj = new Object[1];
+    obj[0] = id;
     jdbc.update(sql, obj);
   }
 }

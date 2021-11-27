@@ -63,4 +63,25 @@ public class TagController {
     // your logic goes here
     return "redirect:/tags";
   }
+
+  @GetMapping("deletar/{id}")
+  public String deletar(@PathVariable Integer id, Model model) {
+
+    Map<String, Object> mapa = tagService.pesquisar(id);
+
+    model.addAttribute("id", id);
+
+    model.addAttribute("tagNome", mapa.get("nome").toString());
+
+    return "tags/deletar";
+  }
+
+  @PostMapping("deletar/{id}")
+  public String deletar(@PathVariable Integer id) {
+
+
+    tagService.deletar(id);
+
+    return "redirect:/tags";
+  }
 }
