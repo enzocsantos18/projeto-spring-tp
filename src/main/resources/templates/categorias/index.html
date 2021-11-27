@@ -40,7 +40,8 @@
     <tr th:each="categoria : ${categorias}">
       <td th:text="${categoria.id}"></td>
       <td th:text="${categoria.nome}"></td>
-      <td><a class="link-btn">Editar</a><a class="link-btn">Deletar</a></td>
+      <td><a th:href="@{/categorias/editar/{id}(id=${categoria.id})}" class="link-btn">Editar</a><a
+          class="link-btn">Deletar</a></td>
     </tr>
     </tbody>
   </table>

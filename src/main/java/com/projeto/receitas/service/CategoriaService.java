@@ -22,4 +22,13 @@ public class CategoriaService {
   public void adicionar(Categoria categoria) {
     categoriasDao.adicionar(categoria);
   }
+
+  public Map<String, Object> pesquisar(Integer id) {
+    return categoriasDao.pesquisar(id);
+  }
+
+  @Transactional
+  public void atualizar(Integer id, String nome) {
+    categoriasDao.atualizar(id, nome);
+  }
 }

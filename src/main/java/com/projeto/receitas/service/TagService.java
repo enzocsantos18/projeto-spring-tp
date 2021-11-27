@@ -27,6 +27,7 @@ public class TagService {
     return tagsDao.pesquisar(id);
   }
 
+  @Transactional
   public void atualizar(Integer id, String nome) {
     tagsDao.atualizar(id, nome);
   }
