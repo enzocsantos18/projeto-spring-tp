@@ -74,3 +74,14 @@ form > p {
    background: orangered;
 
 }
+
+.erro {
+   padding: 30px 30px 20px 30px;
+   background-color: #ff351970;
+   border-radius: 8px;
+}
+
+.erro p {
+   font-size: 18px !important;
+   font-weight: bold;
+}

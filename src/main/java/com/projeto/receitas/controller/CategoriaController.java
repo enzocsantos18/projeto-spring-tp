@@ -60,8 +60,32 @@ public class CategoriaController {
 
     categoriaService.atualizar(id, categoria.getNome());
 
-    // your logic goes here
     return "redirect:/categorias";
+  }
+
+  @GetMapping("deletar/{id}")
+  public String deletar(@PathVariable Integer id, Model model) {
+
+    Map<String, Object> mapa = categoriaService.pesquisar(id);
+
+    model.addAttribute("id", id);
+
+    model.addAttribute("categoriaNome", mapa.get("nome").toString());
+
+    return "categorias/deletar";
+  }
+
+  @PostMapping("deletar/{id}")
+  public String deletarPost(@PathVariable Integer id, final Model model) {
+
+    boolean foiDeletado = categoriaService.deletar(id);
+
+    if (foiDeletado) {
+      return "redirect:/categorias";
+    }
+
+    model.addAttribute("erro", true);
+    return "categorias/deletar";
   }
 
 }

@@ -31,4 +31,9 @@ public class CategoriaService {
   public void atualizar(Integer id, String nome) {
     categoriasDao.atualizar(id, nome);
   }
+
+  @Transactional
+  public boolean deletar(Integer id) {
+    return categoriasDao.deletar(id);
+  }
 }

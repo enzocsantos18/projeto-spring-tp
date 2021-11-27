@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class CategoriasDao {
@@ -35,7 +36,6 @@ public class CategoriasDao {
     Object[] obj = new Object[1];
     obj[0] = categoria.getNome();
 
-
     jdbc.update(sql, obj);
   }
 
@@ -57,6 +57,21 @@ public class CategoriasDao {
     obj[0] = nome;
     obj[1] = id;
     jdbc.update(sql, obj);
+  }
+
+  @Transactional
+  public boolean deletar(Integer id) {
+
+    try {
+      String sql = "DELETE from categoria where id = ? ";
+
+      Object[] obj = new Object[1];
+      obj[0] = id;
+      jdbc.update(sql, obj);
+      return true;
+    } catch (Exception e) {
+      return false;
+    }
   }
 }
 

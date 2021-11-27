@@ -60,7 +60,6 @@ public class TagController {
 
     tagService.atualizar(id, tag.getNome());
 
-    // your logic goes here
     return "redirect:/tags";
   }
 
