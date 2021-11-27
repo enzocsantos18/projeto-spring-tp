@@ -29,7 +29,12 @@ public class TagsDao {
   }
 
   public void adicionar(Tag tag) {
-    jdbc.update("INSERT INTO Tag(nome) values ('" + tag.getNome()+ "');");
+    String sql = "INSERT INTO tag(nome) values (?) ";
+
+    Object[] obj = new Object[1];
+    obj[0] = tag.getNome();
+
+    jdbc.update(sql, obj);
   }
 
   public Map<String, Object> pesquisar(Integer id) {

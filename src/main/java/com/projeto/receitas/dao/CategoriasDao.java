@@ -29,7 +29,14 @@ public class CategoriasDao {
   }
 
   public void adicionar(Categoria categoria) {
-    jdbc.update("INSERT INTO categoria(nome) values ('" + categoria.getNome() + "');");
+
+    String sql = "INSERT INTO categoria(nome) values (?) ";
+
+    Object[] obj = new Object[1];
+    obj[0] = categoria.getNome();
+
+
+    jdbc.update(sql, obj);
   }
 
   public Map<String, Object> pesquisar(Integer id) {
