@@ -22,9 +22,21 @@ public class ReceitaService {
       return rdao.selecionarTagsReceita(id);
   }
 
-   public List<Map<String, Object>> exibirReceitas(){
-   return rdao.exibirReceitas();
+   public List<Map<String, Object>> exibirReceitas(int id){
+   return rdao.exibirReceitas(id);
    }
+
+   public List<Map<String, Object>> exibirBusca(int idCat, int idTag){
+      return rdao.exibirBusca(idCat, idTag);
+   }
+
+   public List<Map<String, Object>> exibirTodasReceitas(){
+      return rdao.exibirTodasReceitas();
+      }
+
+   public List<Map<String, Object>> categoriaCombo(){
+      return rdao.categoriaCombo();
+      }
 
    public List<Map<String, Object>> exibirReceitasTag(int id){
       return rdao.exibirReceitasTag(id);

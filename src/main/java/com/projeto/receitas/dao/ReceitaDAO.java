@@ -45,13 +45,55 @@ public class ReceitaDAO {
         return jdbc.queryForList(sql, obj);
     }
 
-    public List<Map<String, Object>> exibirReceitas() {
-        String sql = "SELECT r.*, c.nome as categoria FROM receita r INNER JOIN categoria c ON r.id_categoria = c.id";
+    public List<Map<String, Object>> categoriaCombo() {
+        String sql = "select * from categoria";
         List<Map<String, Object>> receitas = (List<Map<String, Object>>) jdbc.queryForList(sql);
         return receitas;
     }
 
+    public List<Map<String, Object>> exibirReceitas(int id) {
+        String sql = "SELECT r.*, c.nome as categoria FROM receita r INNER JOIN categoria c ON r.id_categoria = c.id where c.id = /";
+        Object[] obj = new Object[1];
+        obj[0] = id;
+
+        return jdbc.queryForList(sql, obj);
+    }
+
+    public List<Map<String, Object>> exibirTodasReceitas() {
+        String sql = "select distinct r.id,r.nome,r.link_img, c.nome as categoria  from tag t inner join tag_receita tc on (tc.id_tag = t.id) inner join receita r on (tc.id_receita = r.id) inner join categoria c on (r.id_categoria = c.id)";
+        List<Map<String, Object>> receitas = (List<Map<String, Object>>) jdbc.queryForList(sql);
+        return receitas;
+     }
+
+     public List<Map<String, Object>> exibirBusca(int idCat, int idTag) {
+        if (idCat == 0) {
+            String sql = "select distinct r.id,r.nome,r.link_img, c.nome as categoria  from tag t inner join tag_receita tc on (tc.id_tag = t.id) inner join receita r on (tc.id_receita = r.id) inner join categoria c on (r.id_categoria = c.id) where t.id = ?";
+            Object[] obj = new Object[1];
+            obj[0] = idTag;
+
+            return jdbc.queryForList(sql, obj);
+        }
+        if (idTag == 0) {
+            String sql = "select distinct r.id,r.nome,r.link_img, c.nome as categoria  from tag t inner join tag_receita tc on (tc.id_tag = t.id) inner join receita r on (tc.id_receita = r.id) inner join categoria c on (r.id_categoria = c.id) where c.id = ?";
+            Object[] obj = new Object[1];
+            obj[0] = idCat;
+
+            return jdbc.queryForList(sql, obj);
+        }
+        String sql = "select distinct r.id,r.nome,r.link_img, c.nome as categoria  from tag t inner join tag_receita tc on (tc.id_tag = t.id) inner join receita r on (tc.id_receita = r.id) inner join categoria c on (r.id_categoria = c.id) where t.id = ? and c.id = ?";
+        Object[] obj = new Object[2];
+        obj[0] = idTag;
+        obj[1] = idCat;
+
+        return jdbc.queryForList(sql, obj);
+    }
+    
     public List<Map<String, Object>> exibirReceitasTag(int id) {
+        if (id == 0) {
+            String sql = "select r.id,r.nome,r.link_img, c.nome as categoria  from tag t inner join tag_receita tc on (tc.id_tag = t.id) inner join receita r on (tc.id_receita = r.id) inner join categoria c on (r.id_categoria = c.id)";
+            List<Map<String, Object>> receitas = (List<Map<String, Object>>) jdbc.queryForList(sql);
+            return receitas;
+        }
         String sql = "select r.id,r.nome,r.link_img, c.nome as categoria  from tag t inner join tag_receita tc on (tc.id_tag = t.id) inner join receita r on (tc.id_receita = r.id) inner join categoria c on (r.id_categoria = c.id) where t.id = ?";
         Object[] obj = new Object[1];
         obj[0] = id;
@@ -60,6 +102,11 @@ public class ReceitaDAO {
     }
 
     public List<Map<String, Object>> exibirReceitasCategoria(int id) {
+        if (id == 0) {
+            String sql = "select distin r.id,r.nome,r.link_img, c.nome as categoria  from receita r inner join categoria c on (r.id_categoria = c.id)";
+            List<Map<String, Object>> receitas = (List<Map<String, Object>>) jdbc.queryForList(sql);
+            return receitas;
+        }
         String sql = "select r.id,r.nome,r.link_img, c.nome as categoria  from receita r inner join categoria c on (r.id_categoria = c.id) where c.id = ?";
         Object[] obj = new Object[1];
         obj[0] = id;
