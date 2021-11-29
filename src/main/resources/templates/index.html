@@ -14,23 +14,24 @@
 
   <div th:replace="~{cabecalho :: cabecalho}"></div>
    
-   <form action="#" th:action="@{/busca}" th:object="${buscar}" method="post">
+  <form action="#" th:action="@{/busca}" th:object="${buscar}" method="post" class="send">
 
-      <label for="categoria"> Escolha por categoria </label>
-      <select name="categoria" id="categoria">
-         <option id="tdCat" value="0">Todos</option>
-         <option th:each="comboCat : ${comboCats}" th:value="${comboCat.id}" th:text="${comboCat.nome}"></option>
-      </select>
+   <label for="categoria"> Escolha por categoria </label>
+   <select name="categoria" id="categoria">
+      <option id="tdCat" value="0">Todos</option>
+      <option th:each="comboCat : ${comboCats}" th:value="${comboCat.id}" th:text="${comboCat.nome}"></option>
+   </select>
 
-      <label for="tags"> Escolha por tag </label>
-      <select name="tags" id="tags">
-         <option id="tdTag" value="0">Todos</option>
-         <option th:each="comboTag : ${comboTags}" th:value="${comboTag.id}" th:text="${comboTag.nome}"></option>
-      </select>
+   <label for="tags"> Escolha por tag </label>
+   <select name="tags" id="tags">
+      <option id="tdTag" value="0">Todos</option>
+      <option th:each="comboTag : ${comboTags}" th:value="${comboTag.id}" th:text="${comboTag.nome}"></option>
+   </select>
 
-      <button id="Botao">OK</button>
+   <button id="Botao">OK</button>
 
    </form>
+
   <main class="pag-inicial">
      <section>
       <article th:each="receita : ${receitas}">

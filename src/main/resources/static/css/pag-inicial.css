@@ -64,7 +64,7 @@ article:hover .info span{
 }
 
 .pag-inicial{
-   display: flex;
+   /*display: flex;*/
    justify-content: space-between;
 }
 
@@ -113,6 +113,11 @@ aside picture {
 
 aside picture img{
    height: 170px;
+}
+
+.send{
+   margin-left: 165px;
+   margin-top: 27px;
 }
 
 @media (max-width: 1000px)
