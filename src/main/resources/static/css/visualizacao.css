@@ -104,3 +104,25 @@ li{
 .num{
     list-style: auto;
 }
+
+article button{
+   border: 1px solid #F75626;
+   color: #fff;
+   background-color:#F75626;
+   padding: 6px 12px;
+   border-radius: 0.25rem;
+   font-weight: 500;
+   text-transform: uppercase;
+}
+
+article button:hover{
+   cursor: pointer;
+   background-color:#FFFFFF;
+   color: #F75626;
+}
+
+
+article button span {
+   vertical-align: middle;
+   padding-right: 8px;
+}

@@ -32,6 +32,12 @@
                <span class="material-icons material-icons-outlined">bookmark_border</span>
                <span th:text="${categoria}"></span>
             </p>
+            <form th:action="@{'apagar/' + ${id}}" method="post">
+               <button>
+                  <span class="material-icons material-icons-outlined">delete</span>DELETAR RECEITA
+               </button>
+            </a>
+            
          </div>
    </article>
 

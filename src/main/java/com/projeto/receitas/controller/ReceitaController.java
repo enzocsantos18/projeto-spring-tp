@@ -26,6 +26,7 @@ public class ReceitaController {
     @GetMapping("/{id}")
     public String index(@PathVariable("id") int id, Model model) {
         Map<String, Object> mapa = receitaService.selecionarReceita(id);
+        model.addAttribute("id", id);
         model.addAttribute("nome", mapa.get("nome").toString().toUpperCase());
         model.addAttribute("porcao", mapa.get("qt_porcao"));
         model.addAttribute("ingredientes", mapa.get("ingredientes").toString().split(";"));
@@ -62,6 +63,13 @@ public class ReceitaController {
         }
 
         receitaService.adicionar(novaReceita);
+
+        return "redirect:/";
+    }
+
+    @PostMapping("apagar/{id}")
+    public String apagarReceita(@PathVariable int id) {
+        receitaService.deletarReceita(id);
 
         return "redirect:/";
     }

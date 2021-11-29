@@ -34,6 +34,10 @@ public class ReceitaService {
       return rdao.exibirReceitasCategoria(id);
    }
 
+   public void deletarReceita(int id){
+      rdao.deletarReceita(id);
+   }
+
    @Transactional
    public void adicionar(NovaReceitaDTO novaReceita) {
       rdao.adicionar(novaReceita);
