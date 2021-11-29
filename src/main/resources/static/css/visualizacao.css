@@ -2,6 +2,11 @@ body{
     background-color: #f0f0f0;
 }
 
+.receitas-info {
+  min-height: 350px !important;
+}
+
+
 section{
     display: flex;
     width: 725px;
@@ -126,3 +131,4 @@ article button span {
    vertical-align: middle;
    padding-right: 8px;
 }
+

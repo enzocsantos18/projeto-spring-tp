@@ -13,14 +13,14 @@
 <main>
   <section class="form-section">
     <h2>Envie sua receita</h2>
-    <form action="#" th:action="@{/receitas/cadastro}" th:object="${novaReceita}" method="post">
+    <form action="#" th:action="@{/receitas/cadastro}" th:object="${novaReceita}" method="POST">
       <fieldset>
         <label for="nomeReceita">Nome da Receita:</label>
         <input th:field="*{nome}"  type="text" name="nomeReceita" id="nomeReceita">
       </fieldset>
       <fieldset>
         <label for="linkImagem">Link imagem:</label>
-        <input th:field="*{linkImg}" type="text" name="linkImagem" id="linkImagem">
+        <input th:field="*{linkImg}" type="link" name="linkImagem" id="linkImagem">
       </fieldset>
       <h3>Informações extras:</h3>
 
@@ -36,14 +36,13 @@
         <fieldset>
           <label for="categoria">Categoria:</label>
           <select th:field="*{idCategoria}"  name="categoria" id="categoria">
-            <option value="0">--</option>
             <option th:each="categoria : ${categorias}" th:text="${categoria.nome}" th:value="${categoria.id}"></option>
           </select>
         </fieldset>
         <fieldset class="checkboxgroup">
           <label for="tags">Tags:</label>
           <p th:each="tag : ${tags}" >
-            <input th:value="${tag.id}"  type="checkbox" th:text="${tag.nome}">
+            <input name="tags" th:value="${tag.id}"  type="checkbox" th:text="${tag.nome}">
           </p>
           <!-- <p><input name="tags" value="1"  type="checkbox" />Rápidas     </p>
           <p><input name="tags" value="2"  type="checkbox" />Light       </p>
@@ -57,13 +56,13 @@
       <div class="form-group">
         <fieldset>
           <label for="ingredientes">Ingredientes:</label><br>
-          <small>Escreva os passos linha a linha, assim você facilitará a leitura de sua receita.</small><br>
+          <small>Escreva os passos separados pelo delimitador ';', assim você facilitará a leitura de sua receita.</small><br>
           <textarea th:field="*{ingredientes}"  name="ingredientes" id="ingredientes" cols="30" rows="10">
             </textarea>
         </fieldset>
         <fieldset>
           <label for="modoPreparo">Modo preparado:</label><br>
-          <small>Escreva os passos linha a linha, assim você facilitará a leitura de sua receita.</small><br>
+          <small>Escreva os passos separados pelo delimitador ';', assim você facilitará a leitura de sua receita.</small><br>
           <textarea th:field="*{modoPreparo}" name="modoPreparo" id="modoPreparo" cols="30" rows="10">
             </textarea>
         </fieldset>
@@ -72,8 +71,6 @@
         <h2>Antes de enviar</h2>
         <ul>
           <li>Revise sua receita para ter certeza que as quantidades estão corretas e todos os itens estão listados.</li>
-          <li>Por favor, só envie fotos tiradas por você, fotos tiradas da internet não serão aceitas e você ainda corre o risco de ter seu cadastro removido do site.</li>
-          <li>As informações serão posteriormente formatadas pelo time do TudoGostoso.</li>
         </ul>
       </section>
       <button>Enviar receita</button>
